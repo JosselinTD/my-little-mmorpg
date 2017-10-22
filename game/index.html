@@ -12,43 +12,64 @@
 	<div id="stage"></div>
 	<script type="text/javascript" src="../node_modules/craftyjs/dist/crafty.js"></script>
 	<script type="text/javascript">
-		var stageLength = 2000;
+		var currentLength = 0;
 		var canvasLength = 800;
 
-		Crafty.init(800, 600, 'stage');
+		Crafty.init(canvasLength, 600, 'stage')
+			.background('grey');
+
+		generatePanel(canvasLength);
 
 		var player = Crafty.e("2D, Canvas, Color, Twoway, Gravity")
-		    .attr({x:600, y:10, w:30, h:40})
+		    .attr({x:10, y:10, w:30, h:40})
 		    .color("red")
 		    .twoway(200)
 		    .gravityConst(750)
 		    .gravity("Floor")
-		    .bind('Move', follow);
+		    .bind('Move', follow)
+		    .bind('Move', construct);
 
-		Crafty.e("2D, Canvas, Color, Floor")
-			.attr({x:0, y:550, w:400, h:50})
-			.color("black");
-		Crafty.e("2D, Canvas, Color, Floor")
-			.attr({x:450, y:550, w:800, h:50})
-			.color("black");
-		
-		Crafty.viewport.scroll('x', -500);
+		function generatePanel(size) {
+			var origin = currentLength;
+
+			Crafty.e("2D, Canvas, Color, Floor")
+				.attr({x:origin, y:550, w:175, h:50})
+				.color("black");
+			Crafty.e("2D, Canvas, Color, Floor")
+				.attr({x:origin + 225, y:550, w:350, h:50})
+				.color("blue");
+			Crafty.e("2D, Canvas, Color, Floor")
+				.attr({x:origin + 625, y:550, w:175, h:50})
+				.color("green");
+
+			currentLength += size;
+		}
 
 		function follow() {
+			var offset = 100;
 			var rect = Crafty.viewport.rect();
 
-	    	if (this.x < 100 || this.x > 1900) {
+	    	if (this.x < offset || this.x + this.w > currentLength - offset) {
 	    		return;
 	    	}
 
-	    	if (this.x < rect._x + 100) {
-	    		Crafty.viewport.scroll('x', - (this.x - 100));
+	    	if (this.x < rect._x + offset) {
+	    		Crafty.viewport.scroll('x', - (this.x - offset));
 	    	}
 
-	    	if (this.x + this.w > rect._x + rect._w - 100) {
-	    		var newVal = - (this.x + this.w + 100 - rect._w)
+	    	if (this.x + this.w > rect._x + rect._w - offset) {
+	    		var newVal = - (this.x + this.w + offset - rect._w)
 	    		Crafty.viewport.scroll('x', newVal);
 	    	}
+		}
+
+		function construct() {
+			var offset = 200;
+			if (this.x + this.w < currentLength - offset) {
+	    		return;
+	    	}
+
+	    	generatePanel(canvasLength);
 		}
 	</script>
 </body>
