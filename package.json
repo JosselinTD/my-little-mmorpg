@@ -1,0 +1,22 @@
+{
+  "name": "my-little-mmorpg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JosselinTD/my-little-mmorpg.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JosselinTD/my-little-mmorpg/issues"
+  },
+  "homepage": "https://github.com/JosselinTD/my-little-mmorpg#readme",
+  "dependencies": {
+    "craftyjs": "^0.8.0"
+  }
+}
