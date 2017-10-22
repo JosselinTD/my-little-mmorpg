@@ -42,39 +42,55 @@
 				.attr({x:limit, y:550, w:offset, h:50})
 				.color("green");
 
-			// Random section
-			origin = origin + offset;
+			// Random floor
+			generateSection(origin + offset, limit, 550, true);
 
-			var triggerSize = 100; // Minimal size for a platform and size for a hole
-			var maxSection = Math.floor((limit - origin) / 100); // Maximum number of platform and hole
+			currentLength += size;
+
+			// Random etages
+			generateSection(origin, currentLength, 450);
+
+		}
+
+		function generateSection(origin, limit, y, holeLimit) {
+			var triggerSize = 100; // Minimal size for a platform or a hole
+			var maxSection = Math.floor((limit - origin) / triggerSize); // Maximum number of platform and hole
 			var nbSection = Math.floor(Math.random() * maxSection) + 1;
-			var availableFloor = Math.ceil(nbSection / 2);
-			var nbHole = nbSection - availableFloor;
-			var availableFloorSize = size - offset * 2 - nbHole * 100;
+			var availableFloor = nbSection;
+			var nbHole = 0;
+			if (holeLimit) {
+				availableFloor = Math.ceil(nbSection / 2);
+				nbHole = nbSection - availableFloor;
+			}
+			var availableFloorSize = limit - origin;
+			if (holeLimit) {
+				availableFloorSize -= nbHole * triggerSize;
+			}
 			var i;
 			for (i = 0; i < nbSection; i++) {
 				var sectionSize = triggerSize;
-				if (i % 2 === 0) {
+				if (i % 2 !== 0 && holeLimit) {
+					// Si c'est pas une plateforme et que les trous sont fixes
+				} else {
+					// Si c'est une section ou que les trous sont variables
 					availableFloor--;
 					if (availableFloor === 0) {
 						sectionSize = availableFloorSize;
 					} else {
-						var floorSizeMax = availableFloorSize - availableFloor * 100;
-						sectionSize = Math.floor(Math.random() * (floorSizeMax-100)) + 100;
+						var floorSizeMax = availableFloorSize - availableFloor * triggerSize;
+						sectionSize = Math.floor(Math.random() * (floorSizeMax - triggerSize)) + triggerSize;
 						availableFloorSize -= sectionSize;
 					}
 					// Make a floor
-					Crafty.e("2D, Canvas, Color, Floor")
-						.attr({x:origin, y:550, w:sectionSize, h:50})
-						.color("blue");
-				} else {
-					// Make a hole... So... do nothing !
+					if (i % 2 === 0) {
+						Crafty.e("2D, Canvas, Color, Floor")
+							.attr({x:origin, y:y, w:sectionSize, h:50})
+							.color("blue");
+					}
 				}
 
 				origin += sectionSize;
 			}
-
-			currentLength += size;
 		}
 
 		function follow() {
