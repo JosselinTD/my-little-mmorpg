@@ -21,7 +21,7 @@
 		generatePanel(canvasLength);
 
 		var player = Crafty.e("2D, Canvas, Color, Twoway, Gravity")
-		    .attr({x:10, y:10, w:30, h:40})
+		    .attr({x:10, y:520, w:30, h:40})
 		    .color("red")
 		    .twoway(200)
 		    .gravityConst(750)
@@ -31,22 +31,54 @@
 
 		function generatePanel(size) {
 			var origin = currentLength;
+			var offset = 75;
+			var limit = origin + canvasLength - offset;
 
+			// Required extrimities
 			Crafty.e("2D, Canvas, Color, Floor")
-				.attr({x:origin, y:550, w:175, h:50})
+				.attr({x:origin, y:550, w:offset, h:50})
 				.color("black");
 			Crafty.e("2D, Canvas, Color, Floor")
-				.attr({x:origin + 225, y:550, w:350, h:50})
-				.color("blue");
-			Crafty.e("2D, Canvas, Color, Floor")
-				.attr({x:origin + 625, y:550, w:175, h:50})
+				.attr({x:limit, y:550, w:offset, h:50})
 				.color("green");
+
+			// Random section
+			origin = origin + offset;
+
+			var triggerSize = 100; // Minimal size for a platform and size for a hole
+			var maxSection = Math.floor((limit - origin) / 100); // Maximum number of platform and hole
+			var nbSection = Math.floor(Math.random() * maxSection) + 1;
+			var availableFloor = Math.ceil(nbSection / 2);
+			var nbHole = nbSection - availableFloor;
+			var availableFloorSize = size - offset * 2 - nbHole * 100;
+			var i;
+			for (i = 0; i < nbSection; i++) {
+				var sectionSize = triggerSize;
+				if (i % 2 === 0) {
+					availableFloor--;
+					if (availableFloor === 0) {
+						sectionSize = availableFloorSize;
+					} else {
+						var floorSizeMax = availableFloorSize - availableFloor * 100;
+						sectionSize = Math.floor(Math.random() * (floorSizeMax-100)) + 100;
+						availableFloorSize -= sectionSize;
+					}
+					// Make a floor
+					Crafty.e("2D, Canvas, Color, Floor")
+						.attr({x:origin, y:550, w:sectionSize, h:50})
+						.color("blue");
+				} else {
+					// Make a hole... So... do nothing !
+				}
+
+				origin += sectionSize;
+			}
 
 			currentLength += size;
 		}
 
 		function follow() {
-			var offset = 100;
+			var offset = 150;
 			var rect = Crafty.viewport.rect();
 
 	    	if (this.x < offset || this.x + this.w > currentLength - offset) {
