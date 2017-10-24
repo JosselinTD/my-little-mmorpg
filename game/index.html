@@ -30,17 +30,34 @@
 		    .gravity("Floor")
 		    .bind('Move', follow)
 		    .bind('Move', construct)
+		    .bind('Move', gameLimits)
 		    .one('KeyDown', startTimer);
 
 		var timeCounter = Crafty.e("2D, Canvas, Text")
 			.attr({x: 10, y: 10})
 			.text(availableTime);
 
+		function endGame(message) {
+			Crafty.stop();
+			if (confirm(`${message}\nWanna try again ?`)) {
+				location.reload();
+			}
+		}
+
+		function gameLimits() {
+			if (this.y > 600) {
+				endGame('Whoops, you die !');
+			}
+		}
+
 		function startTimer() {
 			timeStart = getCurrentTime();
 			timeCounter.bind('EnterFrame', function(eventData) {
 				var remainingTime = availableTime - (getCurrentTime() - timeStart);
 				this.text(remainingTime);
+				if (remainingTime <= 0) {
+					endGame('Whoops, time\'s up !');
+				}
 			});
 		}
 
