@@ -16,13 +16,14 @@
 		var canvasLength = 800;
 		var availableTime = 300; // en sec
 		var timeStart;
+		var yellowCount = 0;
 
 		Crafty.init(canvasLength, 600, 'stage')
 			.background('grey');
 
 		generatePanel(canvasLength);
 
-		var player = Crafty.e("2D, Canvas, Color, Twoway, Gravity")
+		var player = Crafty.e("2D, Canvas, Color, Twoway, Gravity, Collision")
 		    .attr({x:10, y:520, w:30, h:40})
 		    .color("red")
 		    .twoway(200)
@@ -31,11 +32,30 @@
 		    .bind('Move', follow)
 		    .bind('Move', construct)
 		    .bind('Move', gameLimits)
+		    .checkHits('Resource')
+		    .bind('HitOn', hitResource)
 		    .one('KeyDown', startTimer);
 
 		var timeCounter = Crafty.e("2D, Canvas, Text")
 			.attr({x: 10, y: 10})
 			.text(availableTime);
+
+		var yellowCounter = Crafty.e("2D, Canvas, Text")
+			.attr({x: 10, y: 40})
+			.text(yellowCount);
+
+		addResource('yellow', 75, 530);
+
+		function hitResource(hitData) {
+			for(var r of hitData) {
+				console.log('Hit !');
+				if (r.obj.gameType && r.obj.gameType === 'yellow') {
+					yellowCount++;
+					yellowCounter.text(yellowCount);
+					r.obj.destroy();
+				}
+			}
+		}
 
 		function endGame(message) {
 			Crafty.stop();
@@ -126,6 +146,12 @@
 
 				origin += sectionSize;
 			}
+		}
+
+		function addResource(type, x, y) {
+			Crafty.e("2D, Canvas, Color, Resource")
+				.attr({x, y, w: 10, h: 10, gameType: type})
+				.color(type);
 		}
 
 		function follow() {
