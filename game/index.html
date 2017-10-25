@@ -44,11 +44,8 @@
 			.attr({x: 10, y: 40})
 			.text(yellowCount);
 
-		addResource('yellow', 75, 530);
-
 		function hitResource(hitData) {
 			for(var r of hitData) {
-				console.log('Hit !');
 				if (r.obj.gameType && r.obj.gameType === 'yellow') {
 					yellowCount++;
 					yellowCounter.text(yellowCount);
@@ -98,16 +95,19 @@
 				.attr({x:limit, y:550, w:offset, h:50})
 				.color("green");
 
+			var availablesResources = [{probability: 1, type: 'yellow'}];
+
 			// Random floor
-			generateSection(origin + offset, limit, 550, true);
+			generateSection(origin + offset, limit, 550, true, availablesResources);
 
 			currentLength += size;
 
 			// Random etages
-			generateSection(origin, currentLength, 450);
+			generateSection(origin, currentLength, 450, false, availablesResources);
 		}
 
-		function generateSection(origin, limit, y, holeLimit) {
+		function generateSection(origin, limit, y, holeLimit, availablesResources) {
+			availablesResources = availablesResources || [];
 			var triggerSize = 100; // Minimal size for a platform or a hole
 			var maxSection = Math.floor((limit - origin) / triggerSize); // Maximum number of platform and hole
 			var nbSection = Math.floor(Math.random() * maxSection) + 1;
@@ -141,6 +141,15 @@
 						Crafty.e("2D, Canvas, Color, Floor")
 							.attr({x:origin, y:y, w:sectionSize, h:50})
 							.color("blue");
+
+						if (availablesResources.length) {
+							for (var j = 0; j < Math.floor(sectionSize / triggerSize); j++) {
+								var resource = availablesResources[Math.floor(Math.random() * availablesResources.length)];
+								if (Math.random() < resource.probability) {
+									addResource(resource.type, (origin + j * triggerSize) + (triggerSize / 2), y - 20);
+								}
+							}
+						}
 					}
 				}
 
@@ -166,12 +175,14 @@
 	    		var newVal = - (this.x - offset);
 	    		Crafty.viewport.scroll('x', newVal);
 	    		timeCounter.attr({x: -newVal + 10});
+	    		yellowCounter.attr({x: -newVal + 10});
 	    	}
 
 	    	if (this.x + this.w > rect._x + rect._w - offset) {
 	    		var newVal = - (this.x + this.w + offset - rect._w);
 	    		Crafty.viewport.scroll('x', newVal);
 	    		timeCounter.attr({x: -newVal + 10});
+	    		yellowCounter.attr({x: -newVal + 10});
 	    	}
 		}
 
