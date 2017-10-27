@@ -110,12 +110,8 @@
 			var limit = origin + canvasLength - offset;
 
 			// Required extrimities
-			Crafty.e("2D, Canvas, Color, Floor")
-				.attr({x:origin, y:550, w:offset, h:50})
-				.color("black");
-			Crafty.e("2D, Canvas, Color, Floor")
-				.attr({x:limit, y:550, w:offset, h:50})
-				.color("green");
+			makeGround(origin, 550, offset);
+			makeGround(limit, 550, offset);
 
 			// Random floor
 			generateSection(origin + offset, limit, 550, true, availablesResources);
@@ -158,9 +154,7 @@
 					}
 					// Make a floor
 					if (i % 2 === 0) {
-						Crafty.e("2D, Canvas, Color, Floor")
-							.attr({x:origin, y:y, w:sectionSize, h:50})
-							.color("blue");
+						makeGround(origin, y, sectionSize);
 
 						if (availablesResources.length) {
 							for (var j = 0; j < Math.floor(sectionSize / triggerSize); j++) {
@@ -181,6 +175,12 @@
 			Crafty.e("2D, Canvas, Color, Resource")
 				.attr({x, y, w: 10, h: 10, gameType: resource.type})
 				.color(resource.type);
+		}
+
+		function makeGround(x, y, w) {
+			Crafty.e("2D, DOM, Color, Floor")
+				.attr({x, y, w, h:50})
+				.color('blue');
 		}
 
 		function follow() {
