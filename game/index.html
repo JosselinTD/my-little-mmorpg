@@ -16,7 +16,15 @@
 		var canvasLength = 800;
 		var availableTime = 300; // en sec
 		var timeStart;
-		var yellowCount = 0;
+		var availablesResources = [{
+			probability: 0.2,
+			type: 'yellow',
+			count: 0
+		}, {
+			probability: 0.5,
+			type: 'green',
+			count: 0
+		}];
 
 		Crafty.init(canvasLength, 600, 'stage')
 			.background('grey');
@@ -40,16 +48,30 @@
 			.attr({x: 10, y: 10})
 			.text(availableTime);
 
-		var yellowCounter = Crafty.e("2D, Canvas, Text")
-			.attr({x: 10, y: 40})
-			.text(yellowCount);
+		var counterPlace = 40;
+		for (var resource of availablesResources) {
+			resource.icon = Crafty.e("2D, Canvas, Color")
+				.attr({x: 10, y: counterPlace, w: 10, h: 10})
+				.color(resource.type);
+
+			resource.counter = Crafty.e("2D, Canvas, Text")
+				.attr({x: 30, y: counterPlace})
+				.text(resource.count);
+
+			counterPlace += 40;
+		}
 
 		function hitResource(hitData) {
 			for(var r of hitData) {
-				if (r.obj.gameType && r.obj.gameType === 'yellow') {
-					yellowCount++;
-					yellowCounter.text(yellowCount);
-					r.obj.destroy();
+				if (r.obj.gameType) {
+					for (var resource of availablesResources) {
+						if (r.obj.gameType === resource.type) {
+							resource.count++;
+							resource.counter.text(resource.count);
+							r.obj.destroy();
+							break;
+						}
+					}
 				}
 			}
 		}
@@ -94,8 +116,6 @@
 			Crafty.e("2D, Canvas, Color, Floor")
 				.attr({x:limit, y:550, w:offset, h:50})
 				.color("green");
-
-			var availablesResources = [{probability: 1, type: 'yellow'}];
 
 			// Random floor
 			generateSection(origin + offset, limit, 550, true, availablesResources);
@@ -145,8 +165,8 @@
 						if (availablesResources.length) {
 							for (var j = 0; j < Math.floor(sectionSize / triggerSize); j++) {
 								var resource = availablesResources[Math.floor(Math.random() * availablesResources.length)];
-								if (Math.random() < resource.probability) {
-									addResource(resource.type, (origin + j * triggerSize) + (triggerSize / 2), y - 20);
+								if (Math.random() <= resource.probability) {
+									addResource(resource, (origin + j * triggerSize) + (triggerSize / 2), y - 20);
 								}
 							}
 						}
@@ -157,10 +177,10 @@
 			}
 		}
 
-		function addResource(type, x, y) {
+		function addResource(resource, x, y) {
 			Crafty.e("2D, Canvas, Color, Resource")
-				.attr({x, y, w: 10, h: 10, gameType: type})
-				.color(type);
+				.attr({x, y, w: 10, h: 10, gameType: resource.type})
+				.color(resource.type);
 		}
 
 		function follow() {
@@ -175,14 +195,20 @@
 	    		var newVal = - (this.x - offset);
 	    		Crafty.viewport.scroll('x', newVal);
 	    		timeCounter.attr({x: -newVal + 10});
-	    		yellowCounter.attr({x: -newVal + 10});
+	    		for (var resource of availablesResources) {
+	    			resource.icon.attr({x: -newVal + 10});
+	    			resource.counter.attr({x: -newVal + 30});
+	    		}
 	    	}
 
 	    	if (this.x + this.w > rect._x + rect._w - offset) {
 	    		var newVal = - (this.x + this.w + offset - rect._w);
 	    		Crafty.viewport.scroll('x', newVal);
 	    		timeCounter.attr({x: -newVal + 10});
-	    		yellowCounter.attr({x: -newVal + 10});
+	    		for (var resource of availablesResources) {
+	    			resource.icon.attr({x: -newVal + 10});
+	    			resource.counter.attr({x: -newVal + 30});
+	    		}
 	    	}
 		}
 
