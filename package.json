@@ -19,6 +19,7 @@
   "dependencies": {
     "craftyjs": "^0.8.0",
     "marko": "^4.5.6",
+    "path-skill-system": "0.0.1",
     "toisu": "^3.0.3",
     "toisu-body": "^2.0.3",
     "toisu-router": "^4.1.0"
