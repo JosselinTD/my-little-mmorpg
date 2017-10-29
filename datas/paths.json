@@ -1,0 +1,258 @@
+[
+	{
+		"name": "Voie des plantes",
+		"maxLevel": 50,
+		"skillsTree": [
+			{
+				"level": 1,
+				"maxLevel": 1,
+				"name": "Agastache rugosa"
+			},
+			{
+				"level": 2,
+				"maxLevel": 1,
+				"name": "Alangium chinense"
+			},
+			{
+				"level": 3,
+				"maxLevel": 1,
+				"name": "Pulsatilla chinensis"
+			},
+			{
+				"level": 4,
+				"maxLevel": 1,
+				"name": "Anisodus tanguticus"
+			},
+			{
+				"level": 5,
+				"maxLevel": 1,
+				"name": "Ardisia japonica"
+			},
+			{
+				"level": 6,
+				"maxLevel": 1,
+				"name": "Aster tataricus"
+			},
+			{
+				"level": 7,
+				"maxLevel": 1,
+				"name": "Astragalus penduliflorus"
+			},
+			{
+				"level": 8,
+				"maxLevel": 1,
+				"name": "Camellia sinensis"
+			},
+			{
+				"level": 9,
+				"maxLevel": 1,
+				"name": "Cannabis sativa"
+			},
+			{
+				"level": 10,
+				"maxLevel": 1,
+				"name": "Carthamus tinctorius"
+			},
+			{
+				"level": 11,
+				"maxLevel": 1,
+				"name": "Cinnamomum cassia"
+			},
+			{
+				"level": 12,
+				"maxLevel": 1,
+				"name": "Cissampelos pareira"
+			},
+			{
+				"level": 13,
+				"maxLevel": 1,
+				"name": "Coptis chinensis"
+			},
+			{
+				"level": 14,
+				"maxLevel": 1,
+				"name": "Corydalis ambigua"
+			},
+			{
+				"level": 15,
+				"maxLevel": 1,
+				"name": "Croton tiglium"
+			},
+			{
+				"level": 16,
+				"maxLevel": 1,
+				"name": "Daphne genkwa"
+			},
+			{
+				"level": 17,
+				"maxLevel": 1,
+				"name": "Datura metel"
+			},
+			{
+				"level": 18,
+				"maxLevel": 1,
+				"name": "Datura tatula"
+			},
+			{
+				"level": 19,
+				"maxLevel": 1,
+				"name": "Dendrobium nobile"
+			},
+			{
+				"level": 20,
+				"maxLevel": 1,
+				"name": "Dichroa febrifuga"
+			},
+			{
+				"level": 21,
+				"maxLevel": 1,
+				"name": "Ephedra sinica"
+			},
+			{
+				"level": 22,
+				"maxLevel": 1,
+				"name": "Eucommia ulmoides"
+			},
+			{
+				"level": 23,
+				"maxLevel": 1,
+				"name": "Euphorbia pekinensis"
+			},
+			{
+				"level": 24,
+				"maxLevel": 1,
+				"name": "Flueggea suffruticosa"
+			},
+			{
+				"level": 25,
+				"maxLevel": 1,
+				"name": "Forsythia suspensa"
+			},
+			{
+				"level": 26,
+				"maxLevel": 1,
+				"name": "Gentiana loureiroi"
+			},
+			{
+				"level": 27,
+				"maxLevel": 1,
+				"name": "Gleditsia sinensis"
+			},
+			{
+				"level": 28,
+				"maxLevel": 1,
+				"name": "Glycyrrhiza uralensis"
+			},
+			{
+				"level": 29,
+				"maxLevel": 1,
+				"name": "Hydnocarpus anthelmintica"
+			},
+			{
+				"level": 30,
+				"maxLevel": 1,
+				"name": "Ilex purpurea"
+			},
+			{
+				"level": 31,
+				"maxLevel": 1,
+				"name": "Leonurus japonicus"
+			},
+			{
+				"level": 32,
+				"maxLevel": 1,
+				"name": "Ligusticum wallichii"
+			},
+			{
+				"level": 33,
+				"maxLevel": 1,
+				"name": "Lobelia chinensis"
+			},
+			{
+				"level": 34,
+				"maxLevel": 1,
+				"name": "Phellodendron amurense"
+			},
+			{
+				"level": 35,
+				"maxLevel": 1,
+				"name": "Platycladus orientalis"
+			},
+			{
+				"level": 36,
+				"maxLevel": 1,
+				"name": "Pseudolarix amabilis"
+			},
+			{
+				"level": 37,
+				"maxLevel": 1,
+				"name": "Psilopeganum sinense"
+			},
+			{
+				"level": 38,
+				"maxLevel": 1,
+				"name": "Pueraria lobata"
+			},
+			{
+				"level": 39,
+				"maxLevel": 1,
+				"name": "Rauwolfia serpentina"
+			},
+			{
+				"level": 40,
+				"maxLevel": 1,
+				"name": "Rehmannia glutinosa"
+			},
+			{
+				"level": 41,
+				"maxLevel": 1,
+				"name": "Rheum officinale"
+			},
+			{
+				"level": 42,
+				"maxLevel": 1,
+				"name": "Rhododendron tsinghaiense"
+			},
+			{
+				"level": 43,
+				"maxLevel": 1,
+				"name": "Saussurea costus"
+			},
+			{
+				"level": 44,
+				"maxLevel": 1,
+				"name": "Schisandra chinensis"
+			},
+			{
+				"level": 45,
+				"maxLevel": 1,
+				"name": "Scutellaria baicalensis"
+			},
+			{
+				"level": 46,
+				"maxLevel": 1,
+				"name": "Stemona tuberosa"
+			},
+			{
+				"level": 47,
+				"maxLevel": 1,
+				"name": "Stephania tetrandra"
+			},
+			{
+				"level": 48,
+				"maxLevel": 1,
+				"name": "Styphnolobium japonicum"
+			},
+			{
+				"level": 49,
+				"maxLevel": 1,
+				"name": "Trichosanthes kirilowii"
+			},
+			{
+				"level": 50,
+				"maxLevel": 1,
+				"name": "Wikstroemia indica"
+			}
+		]
+	}
+]
