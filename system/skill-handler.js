@@ -13,7 +13,7 @@ module.exports = class SkillHandler {
 		if (!skill instanceof Skill) {
 			throw new Error('skill must be an instance of Skill');
 		}
-		if (this._skills.find(s => s.key === skill.key)) {
+		if (this._skills.find(s => s.name === skill.name)) {
 			throw new Error('skill already added');
 		}
 		this._skills.push(skill);
@@ -25,7 +25,7 @@ module.exports = class SkillHandler {
 	}
 
 	improveSkill(skill) {
-		skill = this._skills.find(s => s.key === skill.key);
+		skill = this._skills.find(s => s.name === skill.name);
 		if (!skill) {
 			throw new Error('skill unknown');
 		}

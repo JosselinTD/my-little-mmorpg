@@ -1,6 +1,5 @@
 module.exports = class Skill {
-	constructor(key, name, maxLevel=50, costFunction=defaultCost, level=0) {
-		this.key = key;
+	constructor(name, maxLevel=10, costFunction=defaultCost, level=0) {
 		this.name = name;
 		this.maxLevel = maxLevel;
 		this.costFunction = costFunction;
