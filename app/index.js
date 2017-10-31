@@ -19,6 +19,7 @@ module.exports = function() {
 	app.use(body.form());
 	app.use(generateRouter().middleware);
 	app.use(static('game'));
+	app.use(static('node_modules/craftyjs/dist'));
 
 	app.handleError = function(req, res, err) {
 		console.log(err);
@@ -47,8 +48,9 @@ function home(req, res) {
 }
 
 function gameData(req, res) {
-	res.writeHead(200, {"Content-Type": "application/json"});
-	res.end(JSON.stringify(require('../datas/paths.json')));
+	res.writeHead(200, {"Content-Type": "text/javascript"});
+	var content = `var gameDatas = ${JSON.stringify(require('../datas/paths.json'))}`;
+	res.end(content);
 }
 
 module.exports();
