@@ -7,6 +7,7 @@ const http = require('http');
 const Toisu = require('toisu');
 const Router = require('toisu-router');
 const body = require('toisu-body');
+const static = require('toisu-static');
 
 var marko = require('./marko');
 
@@ -17,6 +18,7 @@ module.exports = function() {
 
 	app.use(body.form());
 	app.use(generateRouter().middleware);
+	app.use(static('game'));
 
 	app.handleError = function(req, res, err) {
 		console.log(err);
@@ -33,11 +35,20 @@ function generateRouter() {
 		GET: [home]
 	});
 
+	router.route('/game-data', {
+		GET: [gameData]
+	});
+
 	return router;
 }
 
 function home(req, res) {
 	marko(homeTemplate, res);
+}
+
+function gameData(req, res) {
+	res.writeHead(200, {"Content-Type": "application/json"});
+	res.end(JSON.stringify(require('../datas/paths.json')));
 }
 
 module.exports();

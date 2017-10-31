@@ -6,252 +6,302 @@
 			{
 				"level": 1,
 				"maxLevel": 1,
-				"name": "Agastache rugosa"
+				"name": "Agastache rugosa",
+				"type": "resource"
 			},
 			{
 				"level": 2,
 				"maxLevel": 1,
-				"name": "Alangium chinense"
+				"name": "Alangium chinense",
+				"type": "resource"
 			},
 			{
 				"level": 3,
 				"maxLevel": 1,
-				"name": "Pulsatilla chinensis"
+				"name": "Pulsatilla chinensis",
+				"type": "resource"
 			},
 			{
 				"level": 4,
 				"maxLevel": 1,
-				"name": "Anisodus tanguticus"
+				"name": "Anisodus tanguticus",
+				"type": "resource"
 			},
 			{
 				"level": 5,
 				"maxLevel": 1,
-				"name": "Ardisia japonica"
+				"name": "Ardisia japonica",
+				"type": "resource"
 			},
 			{
 				"level": 6,
 				"maxLevel": 1,
-				"name": "Aster tataricus"
+				"name": "Aster tataricus",
+				"type": "resource"
 			},
 			{
 				"level": 7,
 				"maxLevel": 1,
-				"name": "Astragalus penduliflorus"
+				"name": "Astragalus penduliflorus",
+				"type": "resource"
 			},
 			{
 				"level": 8,
 				"maxLevel": 1,
-				"name": "Camellia sinensis"
+				"name": "Camellia sinensis",
+				"type": "resource"
 			},
 			{
 				"level": 9,
 				"maxLevel": 1,
-				"name": "Cannabis sativa"
+				"name": "Cannabis sativa",
+				"type": "resource"
 			},
 			{
 				"level": 10,
 				"maxLevel": 1,
-				"name": "Carthamus tinctorius"
+				"name": "Carthamus tinctorius",
+				"type": "resource"
 			},
 			{
 				"level": 11,
 				"maxLevel": 1,
-				"name": "Cinnamomum cassia"
+				"name": "Cinnamomum cassia",
+				"type": "resource"
 			},
 			{
 				"level": 12,
 				"maxLevel": 1,
-				"name": "Cissampelos pareira"
+				"name": "Cissampelos pareira",
+				"type": "resource"
 			},
 			{
 				"level": 13,
 				"maxLevel": 1,
-				"name": "Coptis chinensis"
+				"name": "Coptis chinensis",
+				"type": "resource"
 			},
 			{
 				"level": 14,
 				"maxLevel": 1,
-				"name": "Corydalis ambigua"
+				"name": "Corydalis ambigua",
+				"type": "resource"
 			},
 			{
 				"level": 15,
 				"maxLevel": 1,
-				"name": "Croton tiglium"
+				"name": "Croton tiglium",
+				"type": "resource"
 			},
 			{
 				"level": 16,
 				"maxLevel": 1,
-				"name": "Daphne genkwa"
+				"name": "Daphne genkwa",
+				"type": "resource"
 			},
 			{
 				"level": 17,
 				"maxLevel": 1,
-				"name": "Datura metel"
+				"name": "Datura metel",
+				"type": "resource"
 			},
 			{
 				"level": 18,
 				"maxLevel": 1,
-				"name": "Datura tatula"
+				"name": "Datura tatula",
+				"type": "resource"
 			},
 			{
 				"level": 19,
 				"maxLevel": 1,
-				"name": "Dendrobium nobile"
+				"name": "Dendrobium nobile",
+				"type": "resource"
 			},
 			{
 				"level": 20,
 				"maxLevel": 1,
-				"name": "Dichroa febrifuga"
+				"name": "Dichroa febrifuga",
+				"type": "resource"
 			},
 			{
 				"level": 21,
 				"maxLevel": 1,
-				"name": "Ephedra sinica"
+				"name": "Ephedra sinica",
+				"type": "resource"
 			},
 			{
 				"level": 22,
 				"maxLevel": 1,
-				"name": "Eucommia ulmoides"
+				"name": "Eucommia ulmoides",
+				"type": "resource"
 			},
 			{
 				"level": 23,
 				"maxLevel": 1,
-				"name": "Euphorbia pekinensis"
+				"name": "Euphorbia pekinensis",
+				"type": "resource"
 			},
 			{
 				"level": 24,
 				"maxLevel": 1,
-				"name": "Flueggea suffruticosa"
+				"name": "Flueggea suffruticosa",
+				"type": "resource"
 			},
 			{
 				"level": 25,
 				"maxLevel": 1,
-				"name": "Forsythia suspensa"
+				"name": "Forsythia suspensa",
+				"type": "resource"
 			},
 			{
 				"level": 26,
 				"maxLevel": 1,
-				"name": "Gentiana loureiroi"
+				"name": "Gentiana loureiroi",
+				"type": "resource"
 			},
 			{
 				"level": 27,
 				"maxLevel": 1,
-				"name": "Gleditsia sinensis"
+				"name": "Gleditsia sinensis",
+				"type": "resource"
 			},
 			{
 				"level": 28,
 				"maxLevel": 1,
-				"name": "Glycyrrhiza uralensis"
+				"name": "Glycyrrhiza uralensis",
+				"type": "resource"
 			},
 			{
 				"level": 29,
 				"maxLevel": 1,
-				"name": "Hydnocarpus anthelmintica"
+				"name": "Hydnocarpus anthelmintica",
+				"type": "resource"
 			},
 			{
 				"level": 30,
 				"maxLevel": 1,
-				"name": "Ilex purpurea"
+				"name": "Ilex purpurea",
+				"type": "resource"
 			},
 			{
 				"level": 31,
 				"maxLevel": 1,
-				"name": "Leonurus japonicus"
+				"name": "Leonurus japonicus",
+				"type": "resource"
 			},
 			{
 				"level": 32,
 				"maxLevel": 1,
-				"name": "Ligusticum wallichii"
+				"name": "Ligusticum wallichii",
+				"type": "resource"
 			},
 			{
 				"level": 33,
 				"maxLevel": 1,
-				"name": "Lobelia chinensis"
+				"name": "Lobelia chinensis",
+				"type": "resource"
 			},
 			{
 				"level": 34,
 				"maxLevel": 1,
-				"name": "Phellodendron amurense"
+				"name": "Phellodendron amurense",
+				"type": "resource"
 			},
 			{
 				"level": 35,
 				"maxLevel": 1,
-				"name": "Platycladus orientalis"
+				"name": "Platycladus orientalis",
+				"type": "resource"
 			},
 			{
 				"level": 36,
 				"maxLevel": 1,
-				"name": "Pseudolarix amabilis"
+				"name": "Pseudolarix amabilis",
+				"type": "resource"
 			},
 			{
 				"level": 37,
 				"maxLevel": 1,
-				"name": "Psilopeganum sinense"
+				"name": "Psilopeganum sinense",
+				"type": "resource"
 			},
 			{
 				"level": 38,
 				"maxLevel": 1,
-				"name": "Pueraria lobata"
+				"name": "Pueraria lobata",
+				"type": "resource"
 			},
 			{
 				"level": 39,
 				"maxLevel": 1,
-				"name": "Rauwolfia serpentina"
+				"name": "Rauwolfia serpentina",
+				"type": "resource"
 			},
 			{
 				"level": 40,
 				"maxLevel": 1,
-				"name": "Rehmannia glutinosa"
+				"name": "Rehmannia glutinosa",
+				"type": "resource"
 			},
 			{
 				"level": 41,
 				"maxLevel": 1,
-				"name": "Rheum officinale"
+				"name": "Rheum officinale",
+				"type": "resource"
 			},
 			{
 				"level": 42,
 				"maxLevel": 1,
-				"name": "Rhododendron tsinghaiense"
+				"name": "Rhododendron tsinghaiense",
+				"type": "resource"
 			},
 			{
 				"level": 43,
 				"maxLevel": 1,
-				"name": "Saussurea costus"
+				"name": "Saussurea costus",
+				"type": "resource"
 			},
 			{
 				"level": 44,
 				"maxLevel": 1,
-				"name": "Schisandra chinensis"
+				"name": "Schisandra chinensis",
+				"type": "resource"
 			},
 			{
 				"level": 45,
 				"maxLevel": 1,
-				"name": "Scutellaria baicalensis"
+				"name": "Scutellaria baicalensis",
+				"type": "resource"
 			},
 			{
 				"level": 46,
 				"maxLevel": 1,
-				"name": "Stemona tuberosa"
+				"name": "Stemona tuberosa",
+				"type": "resource"
 			},
 			{
 				"level": 47,
 				"maxLevel": 1,
-				"name": "Stephania tetrandra"
+				"name": "Stephania tetrandra",
+				"type": "resource"
 			},
 			{
 				"level": 48,
 				"maxLevel": 1,
-				"name": "Styphnolobium japonicum"
+				"name": "Styphnolobium japonicum",
+				"type": "resource"
 			},
 			{
 				"level": 49,
 				"maxLevel": 1,
-				"name": "Trichosanthes kirilowii"
+				"name": "Trichosanthes kirilowii",
+				"type": "resource"
 			},
 			{
 				"level": 50,
 				"maxLevel": 1,
-				"name": "Wikstroemia indica"
+				"name": "Wikstroemia indica",
+				"type": "resource"
 			}
 		]
 	}

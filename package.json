@@ -20,9 +20,11 @@
     "craftyjs": "^0.8.0",
     "marko": "^4.5.6",
     "path-skill-system": "0.0.1",
+    "socket.io": "^2.0.4",
     "toisu": "^3.0.3",
     "toisu-body": "^2.0.3",
-    "toisu-router": "^4.1.0"
+    "toisu-router": "^4.1.0",
+    "toisu-static": "^1.1.2"
   },
   "devDependencies": {
     "should": "^13.1.3"
